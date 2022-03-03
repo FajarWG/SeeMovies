@@ -2,7 +2,7 @@ const IMAGEBASEURL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key=c6a36b80cc4c15edf75aebb21bb21aa9&query=';
 const discover = 'https://api.themoviedb.org/3/discover/movie?api_key=c6a36b80cc4c15edf75aebb21bb21aa9';
 const trendingUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=c6a36b80cc4c15edf75aebb21bb21aa9';
-const upComingUrl = 'https://api.themoviedb.org/3/movie/upcoming?api_key=c6a36b80cc4c15edf75aebb21bb21aa9&language=en-US&page=1';
+const upComingUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=c6a36b80cc4c15edf75aebb21bb21aa9';
 
 const form = document.getElementById("form");
 const search = document.getElementById("search");
@@ -24,7 +24,7 @@ const showData = (movies) => {
     let HTMLCard = ''
     const container = document.getElementById('container')
 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < 10; index++) {
         const data = movies[index]
         // const year = new Date(data.release_date).getFullYear()
 
@@ -34,10 +34,11 @@ const showData = (movies) => {
             <div class="card__content">
                <h3 class="card__title">${data.title}</h3>
                <div class="card__vote">
-                    <span>&#9733; ${data.vote_average}</span>
+                    <span>&#11088 ${data.vote_average}</span>
                 </div>
             </div>
         </a>
+        
         `
     }
 
@@ -109,7 +110,7 @@ const trendingShow = (movies) => {
             <div class="card__content">
                <h3 class="card__title">${data.title}</h3>
                <div class="card__vote">
-                    <p>&#9733; ${data.vote_average}</p>
+                    <p>&#11088 ${data.vote_average}</p>
                 </div>
             </div>
         </a>
@@ -143,7 +144,7 @@ const upShow = (movies) => {
             <div class="card__content">
                <h3 class="card__title">${data.title}</h3>
                <div class="card__vote">
-                    <p>&#9733; ${data.vote_average}</p>
+                    <p>&#11088 ${data.vote_average}</p>
                 </div>
             </div>
         </div>
